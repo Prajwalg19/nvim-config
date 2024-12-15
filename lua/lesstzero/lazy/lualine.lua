@@ -2,6 +2,7 @@ return
 {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
+    commit = "640260d7c2d98779cab89b1e7088ab14ea354a02",
     config = function()
         require('lualine').setup {
             options = {

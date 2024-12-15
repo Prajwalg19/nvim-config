@@ -45,5 +45,10 @@
         "usePlaceholders": true
       }
     }
-  }
+  },
+  "svelte.enable-ts-plugin": true,
+  "svelte.plugin.html.enable": true,
+  "svelte.plugin.css.completions.enable": true,
+  "svelte.plugin.html.completions.enable": true,
+  "prettier.configPath": "~/svelte-app/.prettierrc"
 }

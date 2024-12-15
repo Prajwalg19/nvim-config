@@ -2,6 +2,9 @@ return {
     "nvim-tree/nvim-tree.lua",
     lazy = false,
     -- event="VeryLazy",
+    dependencies ={
+        'stevearc/dressing.nvim',
+    },
     config = function()
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
