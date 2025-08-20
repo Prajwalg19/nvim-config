@@ -74,8 +74,9 @@ return {
         local actions = require("telescope.actions")
         require("telescope").setup({
             defaults = {
-                file_ignore_patterns = { "%.class", "node_modules" },
+                -- file_ignore_patterns = { "%.class", "node_modules" },
                 theme = "center",
+                preview = false
                 --sorting_strategy = "ascending",
                 -- layout_config = {
                 --     horizontal = {

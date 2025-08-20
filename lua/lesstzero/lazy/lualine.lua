@@ -2,7 +2,7 @@ return
 {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    commit = "640260d7c2d98779cab89b1e7088ab14ea354a02",
+    -- commit = "640260d7c2d98779cab89b1e7088ab14ea354a02",
     config = function()
         require('lualine').setup {
             options = {
@@ -26,7 +26,7 @@ return
             sections = {
                 lualine_a = { 'mode' },
                 lualine_b = { 'branch', 'diff', 'diagnostics' },
-                lualine_c = {},
+                lualine_c = { { 'filename', path = 1 } }, -- Adds file path to lualine_c
                 lualine_x = { 'encoding', 'fileformat', 'filetype' },
                 lualine_y = { 'progress' },
                 lualine_z = { 'location', "searchcount" }
@@ -53,6 +53,26 @@ return
             inactive_winbar = {},
             extensions = {}
         }
+            local default_refresh_events = {
+                'WinEnter',
+                'BufEnter',
+                'BufWritePost',
+                'SessionLoadPost',
+                'FileChangedShellPost',
+                'VimResized',
+                'Filetype',
+                'CursorMoved',
+                'CursorMovedI',
+                'ModeChanged',
+            }
+            vim.api.nvim_create_autocmd(default_refresh_events, {
+                group = vim.api.nvim_create_augroup('LualineRefreshEvents', { clear = true }),
+                callback = function()
+                    vim.schedule(function()
+                        require('lualine').refresh()
+                    end)
+                end,
+            })
     end
 
 }

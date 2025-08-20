@@ -1,17 +1,89 @@
 {
+  "suggest.enablePreselect": true,
+  "suggest.noselect": false,
+  "suggest.asciiCharactersOnly": false,
+  "suggest.triggerCompletionWait": 5,
+  "suggest.labelMaxLength": 50,
+  "suggest.detailField": "preview",
+  "codeLens.enable": true,
+  "diagnostic.level": "warning",
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.refreshOnInsertMode": false,
+  "diagnostic.virtualText": false,
+  "diagnostic.enableMessage": "always",
+  "diagnostic.messageTarget": "float",
+  "diagnostic.format": "[%severity] %message %source%code",
+  "coc.preferences.extensionUpdateCheck": "weekly",
+  "coc.preferences.formatOnSave": true,
+  "coc.preferences.jumpCommand": "drop",
+  "signature.hideOnTextChange": true,
+  "workspace.rootPatterns": [".git", ".svn", ".hg", "package.json", "go.mod"],
+  "workspace.ignoredFolders": [
+    "$HOME",
+    "$HOME/.cargo/**",
+    "$HOME/.rustup/**",
+    "node_modules/**"
+  ],
+  "workspace.workspaceFolderFallbackCwd": true,
+
   "typescript.preferences.renameMatchingJsxTags": true,
   "typescript.preferences.jsxAttributeCompletionStyle": "auto",
-  "markdownlint.onSave": true,
-  "javascript.autoClosingTags": true,
   "typescript.autoClosingTags": true,
-  "rust-analyzer.checkOnSave": false,
-  "suggest.autoTrigger": "always",
+  "typescript.suggest.completeFunctionCalls": false,
+  "typescript.format.enable": false,
+  "tsserver.maxTsServerMemory": 2048,
+  "tsserver.log": "off",
+  "tsserver.useSyntaxServer": "auto",
+  "tsserver.enable": true,
+  "typescript.showUnused": true,
+  "typescript.showDeprecated": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "svelte.plugin.typescript.enable": true,
+
+  "javascript.autoClosingTags": true,
+  "javascript.preferences.renameMatchingJsxTags": true,
+  "javascript.format.enable": false,
+  "javascript.suggest.completeFunctionCalls": false,
+
+  "svelte.plugin.svelte.defaultScriptLanguage": "ts",
+  "svelte.plugin.html.enable": true,
+  "svelte.plugin.css.completions.enable": true,
+  "svelte.plugin.html.completions.enable": true,
+  "svelte.enable-ts-plugin": true,
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true,
+        "completeUnimported": true,
+        "staticcheck": false,
+        "matcher": "fuzzy",
+        "experimentalWorkspaceModule": false
+      }
+    },
+    "jsonnet": {
+      "command": "jsonnet-language-server",
+      "args": ["-t"],
+      "rootPatterns": [".git/", "jsonnetfile.json"],
+      "filetypes": ["jsonnet", "libsonnet"]
+    }
+  },
+
+  "colors.enable": false,
+  "notification.border": true,
+  "dialog.rounded": true,
+  "list.smartCase": false,
+  "list.maxHeight": 15,
+  "dialog.confirmKey": "<cr>",
+  "hover.target": "float",
+
+  "markdownlint.onSave": true,
   "html.autoClosingTags": true,
   "java.server.launchMode": "Standard",
   "suggest.insertMode": "replace",
-  "colors.enable": true,
   "coc.preferences.bracketEnterImprove": true,
-  "diagnostic.checkCurrentLine": true,
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "java.showBuildStatusOnStart.enabled": "notification",
   "Lua.window.statusBar": true,
@@ -22,33 +94,13 @@
     "xml": "xml",
     "vue-html": "html",
     "javascript": "javascriptreact",
+    "svelte": "html",
+    "typescript": "typescriptreact",
     "tailwindcss": ["javascriptreact", "typescriptreact"]
   },
-  "coc.preferences.formatOnSave": true,
-  "dialog.confirmKey": "<cr>",
-  "notification.border": true,
-  "workspace.workspaceFolderFallbackCwd": true,
   "suggest.snippetsSupport": true,
-  "javascript.preferences.renameMatchingJsxTags": true,
-  "dialog.rounded": true,
   "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/18.1.3/clangd_18.1.3/bin/clangd",
-  "tsserver.implicitProjectConfig.checkJs": true,
-  "list.smartCase": false,
   "tailwindCSS.suggestions": true,
   "snippets.ultisnips.pythonPrompt": false,
-  "languageserver": {
-    "go": {
-      "command": "gopls",
-      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"],
-      "initializationOptions": {
-        "usePlaceholders": true
-      }
-    }
-  },
-  "svelte.enable-ts-plugin": true,
-  "svelte.plugin.html.enable": true,
-  "svelte.plugin.css.completions.enable": true,
-  "svelte.plugin.html.completions.enable": true,
-  "prettier.configPath": "~/svelte-app/.prettierrc"
+  "coc.source.vimtex.filetypes": ["tex", "plaintex"]
 }

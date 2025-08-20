@@ -148,5 +148,11 @@ return {
               vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
             endif
         ]])
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            pattern = "*.go",
+            callback = function()
+                vim.fn.CocAction('runCommand', 'editor.action.organizeImport')
+            end,
+        })
     end
 }

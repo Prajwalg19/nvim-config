@@ -2,6 +2,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     event = 'BufEnter',
+    -- branch = "main",
     config = function()
         require("nvim-treesitter.configs").setup({
             -- A list of parser names, or "all"
@@ -10,7 +11,7 @@ return {
             },
             ensure_installed = {
                 "javascript", "typescript", "c", "lua", "vimdoc",
-                "jsdoc", "java", "markdown"
+                "jsdoc", "java", "markdown", 'sql', 'svelte', 'css', 'json', 'tsx', 'yaml', 'dockerfile', 'go', 'html'
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
